@@ -1,5 +1,35 @@
 # Linux Bootstrap
 
+## basics
+````
+#get list of commands
+apropos [synonym]
+
+#get information of command
+man [command]
+
+#show ip adress
+ip a
+
+#(root:) install shh
+apt install ssh
+
+#create new file
+touch [filename.format]
+
+#delete files
+rm [filename]
+
+#delete files & directory
+rm [filename] -R
+
+#proces list
+ps
+
+# add user to sudoers - run AS root
+sudo visudo
+
+````
 ## bash
 ````
 # force color prompt
