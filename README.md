@@ -1,2 +1,1 @@
-# Linux
-My Linux Bootstrap
+# Linux Bootstrap
