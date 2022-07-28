@@ -115,6 +115,10 @@ docker-compose up
 ````
 ## mailhog [on docker]
 ````
+login: 127.0.0.1:8025
+to change the ports from 1025 & 8025 go to docker-compose.yml
+````
+````
 # get mailhog
 cd /usr/local/bin/
 sudo git clone https://github.com/mailhog/MailHog
