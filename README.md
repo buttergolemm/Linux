@@ -44,6 +44,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ````
 ## gophish [+ docker]
+```
+login: https://localhost:333
+password: read from the command "docker-compose up"
+````
 ````
 #create gophish folder (/usr/local/bin/gophish/)
 cd /usr/local/bin/
