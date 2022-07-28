@@ -29,6 +29,9 @@ ps
 # add user to sudoers - run AS root
 sudo visudo
 
+#make bash-file EXECUTABLE
+chmod +x [filename.sh]
+
 ````
 ## bash
 ````
