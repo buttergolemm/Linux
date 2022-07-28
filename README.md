@@ -1,6 +1,6 @@
 # Linux Bootstrap
 
-## basics
+## basic commands
 ````
 #get list of commands
 apropos [synonym]
