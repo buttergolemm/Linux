@@ -121,7 +121,7 @@ sudo git clone https://github.com/mailhog/MailHog
 
 #get docker-compose.yml
 cd /usr/local/bin/mailhog
-sodo wget https://gist.githubusercontent.com/buttergolemm/1872d5378da0f685bee29711861af63a/raw/f4cfbd1c2f9d0ef719f1df48519ad4113dea3cb0/docker-compose.yml
+sudo wget https://gist.githubusercontent.com/buttergolemm/1872d5378da0f685bee29711861af63a/raw/f4cfbd1c2f9d0ef719f1df48519ad4113dea3cb0/docker-compose.yml
 
 #run docker
 sudo docker-compose up -d
