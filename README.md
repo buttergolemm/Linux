@@ -43,3 +43,32 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s | awk '{ print tolower($0) }')-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ````
+## gophish [+ docker]
+````
+#create gophish folder (/usr/local/bin/gophish/)
+cd /usr/local/bin/
+sudo mkdir gophish
+cd gophish
+
+#docker compose download -> /usr/local/bin/gophish/docker-compose.yml
+sudo wget https://gist.githubusercontent.com/buttergolemm/6267ee15e8cde525daf20489bee578ae/raw/a506fc24202cf67a1d1aeb9462fa12909e6e733b/docker-compose.yml
+
+
+#create folder -> (/usr/local/bin/gophish/src/secrets | docker-compose.yml)
+sudo mkdir src
+cd src
+sudo mkdir secrets
+cd secrets
+
+
+#Download Configs (quelle:https://github.com/cisagov/gophish-docker)
+sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/secrets/admin_fullchain.pem
+sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/secrets/admin_privkey.pem
+sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/secrets/config.json
+sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/secrets/phish_fullchain.pem
+sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/secrets/phish_privkey.pem
+
+cd /usr/local/bin/gophish
+
+docker-compose up -d
+````
