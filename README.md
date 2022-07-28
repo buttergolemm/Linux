@@ -74,5 +74,5 @@ sudo wget https://raw.githubusercontent.com/cisagov/gophish-docker/develop/src/s
 
 cd /usr/local/bin/gophish
 
-docker-compose up -d
+docker-compose up
 ````
