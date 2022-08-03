@@ -2,36 +2,17 @@
 
 ## basic commands
 ````
-#get list of commands
-apropos [synonym]
-
-#get information of command
-man [command]
-
-#show ip adress
-ip a
-
 #(root:) install shh
 apt install ssh
 
-#create new file
-touch [filename.format]
-
-#delete files
-rm [filename]
-
 #delete files & directory
 rm [filename] -R
-
-#proces list
-ps
 
 # add user to sudoers - run AS root
 sudo visudo
 
 #make bash-file EXECUTABLE
 chmod +x [filename.sh]
-
 ````
 ## bash
 ````
@@ -53,24 +34,31 @@ sudo sed -i 's/;32m/;31m/g' /root/.bashrc
 # sudo without password
 echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 ````
-## docker
+## docker/kali
 ````
-# remove old versions
-sudo apt-get remove docker docker-engine docker.io containerd runc
+#first install
+sudo apt update
 
-# setup docker APT repo
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg lsb-release
+sudo apt install -y docker.io
 
-# Docker PGP
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo systemctl enable docker --now
 
-# add docker stable Repo
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+docker
 
-# install docker
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+#no need of sudo
+sudo usermod -aG docker $USER
+
+#docker-ce
+
+printf '%s\n' "deb https://download.docker.com/linux/debian bullseye stable" |
+  sudo tee /etc/apt/sources.list.d/docker-ce.list
+
+curl -fsSL https://download.docker.com/linux/debian/gpg |
+  sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-ce-archive-keyring.gpg
+
+sudo apt update
+
+sudo apt install -y docker-ce docker-ce-cli containerd.io
 
 # install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s | awk '{ print tolower($0) }')-$(uname -m)" -o /usr/local/bin/docker-compose
