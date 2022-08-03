@@ -36,7 +36,7 @@ echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 ````
 ## docker/kali
 ````
-#first install
+####    first install   ####
 sudo apt update
 
 sudo apt install -y docker.io
@@ -45,11 +45,12 @@ sudo systemctl enable docker --now
 
 docker
 
-#no need of sudo
+
+####    no need of sudo ####
 sudo usermod -aG docker $USER
 
-#docker-ce
 
+####    docker-ce   ####
 printf '%s\n' "deb https://download.docker.com/linux/debian bullseye stable" |
   sudo tee /etc/apt/sources.list.d/docker-ce.list
 
@@ -60,7 +61,7 @@ sudo apt update
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 
-# install docker-compose
+####    install docker-compose  ####
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s | awk '{ print tolower($0) }')-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
