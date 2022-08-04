@@ -1,14 +1,14 @@
 Version: '3'
 
 services:
-  jupyter-notebook:
-    image: jupyter/datascience-notebook:latest
-    volumes:
-        - ./:/home/jovyan/work
-    ports:
-        - 8888:8888
-    environment:
-        - JUPYTER_TOKEN=PASSWORT
-    container_name: jupyter-notebook
+    jupyter-notebook:
+        image: jupyter/datascience-notebook:latest
+        volumes:
+            - ./:/home/jovyan/work
+        ports:
+            - 8888:8888
+        environment:
+            - JUPYTER_TOKEN=PASSWORT
+        container_name: jupyter-notebook
 
 
