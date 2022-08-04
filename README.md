@@ -4,6 +4,7 @@
 ````
 #(root:) install shh
 apt install ssh
+sudo systemctl enable ssh
 
 #delete files & directory
 rm [filename] -R
