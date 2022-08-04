@@ -1,15 +1,15 @@
 ---
-Version: '3'
+Version: "3.7"
 
 services:
   notebook:
     image: jupyter/datascience-notebook:latest
+    environment:
+      - JUPYTER_TOKEN=hi
     volumes:
       - ./:/home/jovyan/work
     ports:
       - 8888:8888
-    environment:
-      - JUPYTER_TOKEN=hi
     container_name: jupyter-notebook-buttergolemm
 
 
