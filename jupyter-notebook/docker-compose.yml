@@ -2,14 +2,14 @@
 Version: '3'
 
 services:
-  jupyter-notebook:
+  notebook:
     image: jupyter/datascience-notebook:latest
     volumes:
-        - ./:/home/jovyan/work
+      - ./:/home/jovyan/work
     ports:
-        - 8888:8888
+      - 8888:8888
     environment:
-        - JUPYTER_TOKEN=PASSWORT
-    container_name: jupyter-notebook
+      - JUPYTER_TOKEN=hi
+    container_name: jupyter-notebook-buttergolemm
 
 
